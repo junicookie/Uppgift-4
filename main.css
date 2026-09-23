@@ -1,0 +1,24 @@
+.complete {
+    text-decoration: line-through;
+    color: gray;
+}
+
+#deleteBtn {
+    background-color: transparent;
+    border: 1px;
+    border-color: transparent;
+    transition-duration: 0.4s;
+    padding: 2px;
+    margin-left: 5px;
+    
+
+}
+
+#deleteBtn:hover {
+color: red;
+border: 1px dotted;
+border-radius: 3px;
+padding: 2px;
+margin-left: 5px;
+
+}
