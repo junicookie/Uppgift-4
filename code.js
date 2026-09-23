@@ -17,17 +17,24 @@ alert("Please write something in the text box.")
 return; 
 
 } else {
-// Create a list and span-element. Add text from input. 
+// Create a list and span-element. 
 const addList = document.createElement("li")
 const addSpanElement = document.createElement("span");
 
+// Create the task object
+const addObject = {
+text: input.value,
+};
+
+//Insert text to lists and span
+addSpanElement.innerText = addObject.text;
 addSpanElement.innerText = input.value;
 list.appendChild(addList);
 addList.appendChild(addSpanElement);
 
 
 //Insert text to array and get position in array
-tasks.push(input.value);
+tasks.push(addObject);
 const taskIndex = tasks.length - 1;
 
 //Insert delete button and empty text box field.
