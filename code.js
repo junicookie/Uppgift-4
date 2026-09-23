@@ -17,13 +17,14 @@ alert("Please write something in the text box.")
 return; 
 
 } else {
-// Create a list and span-element. Add value of input. 
+// Create a list and span-element. Add text from input. 
 const addList = document.createElement("li")
 const addSpanElement = document.createElement("span");
 
 addSpanElement.innerText = input.value;
-addList.appendChild(addSpanElement);
 list.appendChild(addList);
+addList.appendChild(addSpanElement);
+
 
 //Insert text to array and get position in array
 tasks.push(input.value);
