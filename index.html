@@ -5,25 +5,26 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Uppgift 4</title>
     <link rel='stylesheet' href='main.css'>
+
 </head>
 <body>
-<h1>ToDo List</h1>
 
+<h1>ToDo list</h1>
 <h2>Current Tasks:</h2>
+
 <ul id="list">
 <!-- Task list will be populated here by JavaScript -->
 </ul>
 
-<small>Click on a task to mark it as finished.</small>
-<br><br>
+<p>Click on a task to mark it as finished.</p>
 
-<label for="input"><b>New Task:</b></label>
+<label for="input-field">New Task:</label>
 <br>
-<input type="text" id="addButton" name="input" placeholder="Add a new task...">
-<button>Add to list</button>
+<input type="text" id="input-field" placeholder="Add a new task...">
+<button class="addBtn">Add to list</button>
+<small id="empty-input-message" class="message"></small>
 
 <p id="taskCounter">0 tasks completed</p>
-
 
 </body>
 <script src="code.js"></script>

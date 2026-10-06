@@ -1,24 +1,31 @@
-.complete {
-    text-decoration: line-through;
-    color: gray;
+
+small {
+    color: red;
+}
+
+p {
+font-size: 15px;
 }
 
 #deleteBtn {
-    background-color: transparent;
-    border: 1px;
-    border-color: transparent;
-    transition-duration: 0.4s;
-    padding: 2px;
-    margin-left: 5px;
-    
-
-}
-
-#deleteBtn:hover {
-color: red;
-border: 1px dotted;
-border-radius: 3px;
+background-color: transparent;
+border: 1px;
+border-color: transparent;
 padding: 2px;
 margin-left: 5px;
+}
 
+#deleteBtnImage {
+width: 10px;
+height: 10px;
+}
+
+#deleteBtn {
+border-color: transparent;
+background-color: transparent;
+}
+
+.complete {
+text-decoration: line-through;
+color: gray;
 }

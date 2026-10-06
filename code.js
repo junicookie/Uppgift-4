@@ -1,9 +1,8 @@
 const input = document.querySelector('input');
-const addBtn = document.getElementById("addButton")
 const button = document.querySelector('button');
-const list = document.querySelector("ul")
-const completedTask = document.getElementById("taskCounter")
-
+const list = document.querySelector("ul");
+const completedTask = document.getElementById("taskCounter");
+const message = document.getElementById("empty-input-message");
 
 let completedNum = 0;
 let tasks = [];
@@ -11,12 +10,18 @@ let tasks = [];
 
 
 function addTask() {
-//Check is value is empty and send alert
+//Check is value is empty and show error message
 if (input.value.trim() === "") {
-alert("Please write something in the text box.")
+message.innerHTML = "Input must not be empty";
+message.style.display = "block";
+
 return; 
 
 } else {
+
+//Remove error message
+message.style.display= "none";    
+
 // Create a list and span-element. 
 const addList = document.createElement("li")
 const addSpanElement = document.createElement("span");
@@ -44,23 +49,30 @@ input.value = ""
 
 //Adding counter for completed tasks
 function counter(){
- completedNum = list.querySelectorAll(".complete").length   
- completedTask.innerText = (`${completedNum} tasks completed`)
+ completedNum = tasks.length
+
+completedNum = list.querySelectorAll(".complete").length;
+completedTask.innerText = `${completedNum} completed`;
 }
 
 //Create delete button
 function addDeleteBtn(taskElement, index) {
 const deleteBtn = document.createElement("button")
-deleteBtn.textContent = "🗑️";
-deleteBtn.id = "deleteBtn"
+const deleteImg = document.createElement("img");
+deleteImg.src = "https://em-content.zobj.net/source/apple/325/wastebasket_1f5d1-fe0f.png";
+
+deleteBtn.id = "deleteBtn";
+deleteImg.id = "deleteBtnImage"
 
 //Remove task on button "click"
 deleteBtn.addEventListener("click", () => {
     taskElement.remove();
-    tasks.splice(index, 1)
+    tasks.splice(index, 1);
+    counter();
 });
 
 taskElement.appendChild(deleteBtn);
+deleteBtn.appendChild(deleteImg);
 }
 
 //Toggle between finished/unfinished on "click" 
@@ -73,6 +85,10 @@ counter();}
 
 //Create list when "Add to list" is clicked. 
 button.addEventListener("click", addTask)
+
+
+
+
 
 
 
